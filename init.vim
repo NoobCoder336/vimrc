@@ -1,14 +1,30 @@
-:set number
-:set nowrap
-
-:set autoindent
-:set tabstop=4
-:set shiftwidth=4
-:set smarttab
-:set softtabstop=4
-:set mouse=a
-
+set exrc
+#set guicursor=
+set relativenumber
+set nohlsearch
+set hidden
+set noerrorbells
+set tabstop=4 softtabstop=4
+set shiftwidth=4
+set expandtab
+set smartindent
+set nu
+set nowrap
+set smartcase
+set noswapfile
+set nobackup
+set undodir=~/.vim/undodir
+set undofile
+set incsearch
+set termguicolors
+set scrolloff=8
+set noshowmode
+set completeopt=menuone,noinsert,noselect
+set signcolumn=yes
 call plug#begin('~/.config/nvim/plugged')
+
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'dsznajder/vscode-es7-javascript-react-snippets', { 'do': 'yarn install --frozen-lockfile && yarn compile' }
 Plug 'SirVer/ultisnips'
 Plug 'mlaursen/vim-react-snippets'
 Plug 'http://github.com/tpope/vim-surround' " Surrounding ysw)
@@ -34,9 +50,14 @@ Plug 'SirVer/ultisnips'
 Plug 'sbdchd/neoformat'
 " Snippets are separated from the engine. Add this if you want them:
 Plug 'honza/vim-snippets'
+Plug 'neovim/nvim-lspconfig'
+Plug 'kabouzeid/nvim-lspinstall'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'dsznajder/vscode-es7-javascript-react-snippets', { 'do': 'yarn install --frozen-lockfile && yarn compile' }
 set encoding=UTF-8
 
 call plug#end()
+
 
 nnoremap <C-f> :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
@@ -51,11 +72,11 @@ set termguicolors
 
 let g:tokyonight_style = 'night' " available: night, storm
 let g:tokyonight_enable_italic = 1
-
 let g:neoformat_try_node_exe = 1
 autocmd BufWritePre *.js Neoformat
 colorscheme tokyonight
-let g:NERDTreeDirArrowExpandable="🔹"
-let g:NERDTreeDirArrowCollapsible="🔻"
- airline symbols
+set background=dark
+colorscheme gruvbox
+#let g:NERDTreeDirArrowExpandable="🔹"
+#let g:NERDTreeDirArrowCollapsible="🔻"
 noremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"

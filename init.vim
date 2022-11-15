@@ -1,5 +1,5 @@
 set exrc
-#set guicursor=
+
 set relativenumber
 set nohlsearch
 set hidden
@@ -54,6 +54,11 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'kabouzeid/nvim-lspinstall'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'dsznajder/vscode-es7-javascript-react-snippets', { 'do': 'yarn install --frozen-lockfile && yarn compile' }
+Plug 'neovim/nvim-lspconfig'
+Plug 'kabouzeid/nvim-lspinstall'
+
+Plug 'neovim/nvim-lspconfig'
+Plug 'kabouzeid/nvim-lspinstall'
 set encoding=UTF-8
 
 call plug#end()
@@ -68,15 +73,13 @@ nmap <F8> :TagbarToggle<CR>
 
 :set completeopt-=preview " For No Previews
 
-set termguicolors
 
 let g:tokyonight_style = 'night' " available: night, storm
 let g:tokyonight_enable_italic = 1
 let g:neoformat_try_node_exe = 1
 autocmd BufWritePre *.js Neoformat
 colorscheme tokyonight
-set background=dark
-colorscheme gruvbox
-#let g:NERDTreeDirArrowExpandable="🔹"
-#let g:NERDTreeDirArrowCollapsible="🔻"
+
+
+
 noremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
